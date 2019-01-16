@@ -94,7 +94,6 @@ hubotUrlTitle = (robot) ->
           size += chunk.length
           if size > MAX_SIZE_DOWNLOADED_FILES
             this.abort()
-            msg.send "Resource at #{url} exceeds the maximum size."
 
 # Export/expose only the processing function for the robot
 module.exports = hubotUrlTitle
