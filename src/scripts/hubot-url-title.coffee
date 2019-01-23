@@ -59,7 +59,7 @@ hubotUrlTitle = (robot) ->
         return
 
       # filter out some common files from trying
-      ignore = url.match(/\.(png|jpg|jpeg|gif|txt|zip|tar\.bz|js|css|pdf|webm|mp4)/)
+      ignore = url.match(/\.(png|jpg|jpeg|gif|txt|zip|tar\.bz|js|css|pdf|webm|mp4|psd|flv|tiff|tif|ai|eps|wav|mp3|mp4|mpg|mpeg|avi|mov|f4v|wmv|vob|mkv|m4v|dng|raw|svg)/)
 
       ignorePattern = process.env.HUBOT_URL_TITLE_IGNORE_URLS
       if !ignore && ignorePattern
