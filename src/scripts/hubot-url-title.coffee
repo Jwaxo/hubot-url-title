@@ -59,7 +59,7 @@ hubotUrlTitle = (robot) ->
         return
 
       # filter out some common files from trying
-      ignore = url.match(/\.(png|jpg|jpeg|gif|txt|zip|tar\.bz|js|css|pdf)/)
+      ignore = url.match(/\.(png|jpg|jpeg|gif|txt|zip|tar\.bz|js|css|pdf|webm|mp4)/)
 
       ignorePattern = process.env.HUBOT_URL_TITLE_IGNORE_URLS
       if !ignore && ignorePattern
@@ -94,6 +94,7 @@ hubotUrlTitle = (robot) ->
           size += chunk.length
           if size > MAX_SIZE_DOWNLOADED_FILES
             this.abort()
+            msg.send "Resource at #{url} exceeds the maximum size."
 
 # Export/expose only the processing function for the robot
 module.exports = hubotUrlTitle
